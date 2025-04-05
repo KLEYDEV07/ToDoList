@@ -90,3 +90,9 @@ li button {
 li button:hover {
     background: #d62839;
 }
+
+
+.completadas {
+    text-decoration: line-through;
+    color: gray;
+}

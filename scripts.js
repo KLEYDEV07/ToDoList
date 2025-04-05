@@ -22,11 +22,22 @@ agregarTarea.addEventListener('click', () => {
     botonTareas.value = "";
 });
 
-// Función para agregar tarea al DOM
+// Función para agregar tarea al DOM con checkbox
 function agregarTareaDOM(texto, completada = false) {
     const taskItem = document.createElement('li');
-    taskItem.innerText = texto;
-    if (completada) taskItem.classList.add('completadas');
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = completada;
+
+    const label = document.createElement('span');
+    label.innerText = texto;
+    if (completada) label.classList.add('completadas');
+
+    checkbox.addEventListener('change', () => {
+        label.classList.toggle('completadas');
+        toggleCompletada(texto);
+    });
 
     const eliminarTarea = document.createElement('button');
     eliminarTarea.innerText = 'Eliminar';
@@ -37,11 +48,8 @@ function agregarTareaDOM(texto, completada = false) {
         eliminarTareaLocal(texto);
     });
 
-    taskItem.addEventListener('click', () => {
-        taskItem.classList.toggle('completadas');
-        toggleCompletada(texto);
-    });
-
+    taskItem.appendChild(checkbox);
+    taskItem.appendChild(label);
     taskItem.appendChild(eliminarTarea);
     listaTareas.appendChild(taskItem);
 }

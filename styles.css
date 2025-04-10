@@ -1,6 +1,5 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +20,7 @@ h1 {
     margin-bottom: 20px;
     font-size: 22px;
     color: #333;
+    text-align: center;
 }
 
 input {
@@ -92,7 +92,19 @@ li button:hover {
 }
 
 
-.completadas {
+.completada {
     text-decoration: line-through;
     color: gray;
+    opacity: 0.6;
+}
+
+
+
+.container-forms{
+    border-radius: 10%;
+    border-color: #d62839;
+}
+
+.configuracion{
+    align-items: center;
 }

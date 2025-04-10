@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="es"> <!-- Cambié a español si prefieres -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To DO LIST</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body id="cuerpo">
     <div class="todo-container">
         <h1>TO DO LIST</h1>
 
         <!-- Entrada para la nueva tarea -->
-        <input type="text" id="nueva-tarea" placeholder="Añadir tarea" required>
 
         <!-- Botón para agregar tarea -->
-        <button id="add-task">Agregar tarea</button>
-
+        <input type="text" id="input-tarea" placeholder="Añadir tarea" required>
+        <button id="agregar-tarea">Agregar tarea</button>
+        <ul id="contenedor-tareas"></ul>
         <!-- Lista donde se muestran las tareas -->
         <ul id="task-list"></ul>
-    </div>
-
+        <button id="btn-config" title="Configuración">
+            ⚙️
+        </button>
+        
+        <!-- Panel de configuración oculto -->
+        <div id="panel-config" style="display: none;">
+            <label>Color de fondo: <input type="color" id="bg-color"></label><br>
+            <label>Color de texto: <input type="color" id="text-color"></label><br>
+            <label>Fuente: 
+                <select id="font-style">
+                    <option value="Arial">Arial</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Tahoma">Tahoma</option>
+                </select>
+            </label><br>
+            <label>Tamaño de letra: 
+                <input type="range" id="font-size" min="12" max="36" value="16">
+            </label><br><br>
+            <button id="btn-reset">Restablecer</button>
+        </div>
+    
     <!-- Enlace al script -->
     <script src="scripts.js"></script>
 </body>
+
 </html>
